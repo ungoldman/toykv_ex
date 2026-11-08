@@ -18,12 +18,6 @@ Type `help` for the commands. Ctrl-D exits.
 - `ToyKV.Server` is a GenServer holding a `Store`, started under the app's supervisor as `ToyKV.Server`.
 - `ToyKV.CLI` reads lines with `IO.gets`, parses them, and calls the server.
 
-## differences from the JS version
-
-- An inner `COMMIT` lands in the enclosing transaction. The original wrote it straight to the base, where the outer transaction's commit then overwrote it.
-- `SET` without a value is an invalid command, not a key set to `undefined`.
-- A crash in the server restarts it empty under the supervisor.
-
 ## test
 
 ```
