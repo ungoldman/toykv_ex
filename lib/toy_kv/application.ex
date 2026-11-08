@@ -8,8 +8,7 @@ defmodule ToyKV.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # Starts a worker by calling: ToyKV.Worker.start_link(arg)
-      # {ToyKV.Worker, arg}
+      {ToyKV.Server, name: ToyKV.Server}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
