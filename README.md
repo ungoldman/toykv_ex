@@ -2,7 +2,7 @@
 
 Elixir port of [toykv](https://github.com/ungoldman/toykv), an in-memory transactional key value store with a REPL.
 
-(toy project, for learning [OTP](https://en.wikipedia.org/wiki/Open_Telecom_Platform))
+(toy project, for learning [Elixir](https://elixir-lang.org) and [OTP](https://en.wikipedia.org/wiki/Open_Telecom_Platform) basics)
 
 ## start
 
