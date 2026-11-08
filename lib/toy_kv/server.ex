@@ -10,13 +10,13 @@ defmodule ToyKV.Server do
     GenServer.start_link(__MODULE__, :ok, Keyword.take(opts, [:name]))
   end
 
-  def set(server, key, value), do: GenServer.call(server, {:set, key, value})
-  def get(server, key), do: GenServer.call(server, {:get, key})
-  def delete(server, key), do: GenServer.call(server, {:delete, key})
-  def count(server, value), do: GenServer.call(server, {:count, value})
-  def begin(server), do: GenServer.call(server, :begin)
-  def commit(server), do: GenServer.call(server, :commit)
-  def rollback(server), do: GenServer.call(server, :rollback)
+  def set(server \\ __MODULE__, key, value), do: GenServer.call(server, {:set, key, value})
+  def get(server \\ __MODULE__, key), do: GenServer.call(server, {:get, key})
+  def delete(server \\ __MODULE__, key), do: GenServer.call(server, {:delete, key})
+  def count(server \\ __MODULE__, value), do: GenServer.call(server, {:count, value})
+  def begin(server \\ __MODULE__), do: GenServer.call(server, :begin)
+  def commit(server \\ __MODULE__), do: GenServer.call(server, :commit)
+  def rollback(server \\ __MODULE__), do: GenServer.call(server, :rollback)
 
   # Server callbacks, run in the GenServer's own process.
 
